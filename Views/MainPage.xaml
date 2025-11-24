@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameOfWords.Views.MainPage"
+             Title="Game of Words">
+    <VerticalStackLayout Spacing="16">
+        <Label Text="Game of Words"
+               FontSize="32"
+               HorizontalOptions="Center" />
+        <Label x:Name="StatusLabel"
+               Text="Prepare your vocabulary adventure!"
+               FontSize="18" />
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+            <VerticalStackLayout Grid.Column="0" Spacing="8">
+                <Label Text="Game Loop" FontAttributes="Bold" />
+                <Label x:Name="LoopStatus" Text="Waiting to start" />
+                <Button Text="Start" Clicked="OnStartClicked" />
+                <Button Text="Pause" Clicked="OnPauseClicked" />
+                <Button Text="Reset" Clicked="OnResetClicked" />
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" Spacing="8">
+                <Label Text="Next Word" FontAttributes="Bold" />
+                <Label x:Name="NextWordLabel" Text="(none yet)" FontSize="20" />
+                <Label Text="Score" FontAttributes="Bold" />
+                <Label x:Name="ScoreLabel" Text="0" FontSize="20" />
+            </VerticalStackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
